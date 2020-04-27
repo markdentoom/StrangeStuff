@@ -22,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '!u1o&t&znp_s9$cwicy48v$$zovl^^e7=ugdzelsf9^cwzd3wu'
+SECRET_KEY = 'obfuscated'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -93,8 +93,11 @@ WSGI_APPLICATION = 'StrangeStuff.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'obfuscated',
+        'USER': 'obfuscated',
+        'PASSWORD': 'obfuscated',
+        'HOST': 'obfuscated'
     }
 }
 
@@ -157,4 +160,4 @@ LOGIN_REDIRECT_URL = '/'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # stripe
-STRIPE_SECRET_KEY = "sk_test_4eC39HqLyjWDarjtT1zdp7dc"
+STRIPE_SECRET_KEY = "obfuscated"
