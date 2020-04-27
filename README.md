@@ -1,4 +1,4 @@
-# strangeStuff
+# StrangeStuff
 
 An e-commerce site that sells peculiar items.
 
