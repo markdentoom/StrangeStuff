@@ -11,7 +11,7 @@ View the site [here](http://strangestuffdeployment.eu.pythonanywhere.com/). If t
 ![image](https://user-images.githubusercontent.com/59030690/80414488-68710080-88d1-11ea-84a7-d3579f6a7659.png)
 
 ### **Dynamic quantity buttons in an advanced cart system**
-![image](https://user-images.githubusercontent.com/59030690/80414240-044e3c80-88d1-11ea-8c8f-50b5b59692e5.png)
+![image](https://user-images.githubusercontent.com/59030690/80414240-044e3c80-88d1-11ea-8c8f-50b5b59692e5.png)  
 ![image](https://user-images.githubusercontent.com/59030690/80413959-91dd5c80-88d0-11ea-90ba-1f5066519ae4.png)
 
 ### **Promo code functionality**
