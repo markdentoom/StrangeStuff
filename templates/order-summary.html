@@ -1,0 +1,85 @@
+{%extends 'base.html'%}
+{%load static%}
+
+{%block content%}
+
+  <!--Main layout-->
+  <main>
+    <div class="container">
+
+      <!-- table styling from: https://mdbootstrap.com/docs/jquery/tables/basic/ -->
+      <div class="table-responsive text-nowrap">
+        <h2>Order summary</h2>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Item</th>
+              <th scope="col">Price</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Total price</th>
+            </tr>
+          </thead>
+          <tbody>
+            {%for order_item in object.items.all%}
+              <tr>
+                <!-- # -->
+                <th scope="row">{{forloop.counter}}</th>
+                <!-- Item -->
+                <td>{{order_item.item.name}}</td>
+                <!-- Price -->
+                {%if order_item.item.discount_price%}
+                <td>
+                  <del>€{{order_item.item.price|floatformat:2}}</del> €{{order_item.item.discount_price|floatformat:2}}
+                </td>
+                {%else%}
+                <td>€{{order_item.item.price|floatformat:2}}</td>
+                {%endif%}
+                <!-- Quantity, buttons from: https://mdbootstrap.com/docs/jquery/content/icons-list/? -->
+                <td>
+                  <a href="{%url 'main:remove-single-from-cart' order_item.item.slug%}"><i class='mr-2 fas fa-minus'></i></a>
+                  {{order_item.quantity}}
+                  <a href="{%url 'main:add-single-to-cart' order_item.item.slug%}"><i class='ml-2 fas fa-plus'></i></a>
+                </td>
+                <!-- total -->
+                {%if order_item.item.discount_price%}
+                <td>
+                  €{{order_item.get_total_discount_price|floatformat:2}}
+                  <a href="{%url 'main:remove-from-cart' order_item.item.slug%}"><i class='fas fa-times-circle float-right'></i></a>
+                </td>
+                {%else%}
+                <td>
+                  €{{order_item.get_total_price|floatformat:2}}
+                  <a href="{%url 'main:remove-from-cart' order_item.item.slug%}"><i class='fas fa-times-circle float-right'></i></a>
+                </td>
+                {%endif%}
+              </tr>
+            {%empty%}
+              <tr>
+                <td colspan="5">Your cart is empty.</td>
+              </tr>
+            {%endfor%}
+            {%if object.coupon%}
+              <tr>
+                <td colspan="4"><b>Coupon</b></td>
+                <td><b>-€{{object.coupon.amount|floatformat:2}}</b></td>
+              </tr>
+            {%endif%}
+              <tr>
+                <td colspan="4"><b>Total:</b></td>
+                <td><b>€{{object.get_total|floatformat:2}}</b></td>
+              </tr>
+          </tbody>
+        </table>
+        <div style="text-align: center;">
+          <a class='btn btn-primary ml-2' href="/">Continue shopping</a>
+          {%if object.get_total%}
+            <a style="color:#212529;" class='btn btn-warning' href="/checkout">Proceed to checkout</a>
+          {%endif%}
+        </div>
+      </div>
+    </div>
+  </main>
+  <!--Main layout-->
+
+{%endblock%}
