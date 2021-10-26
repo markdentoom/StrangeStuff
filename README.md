@@ -4,7 +4,7 @@ An e-commerce site that sells peculiar items.
 
 ## Getting Started
 
-View the site [here](http://strangestuffdeployment.eu.pythonanywhere.com/). If the site is down, [send me an email](mailto:markdentoom@hotmail.com?subject=[GitHub]%20StrangeStuff%20is%20down!) and I will restart it.
+The hosting license has expired. This project can now only be ran locally.
 
 ## Notable features:
 ### **Discount system**
