@@ -28,7 +28,7 @@ The hosting license has expired. This project can now only be ran locally.
 
 ## Contributing
 
-This is a solo project. If you find any issues, please create in issue in the [Issues tab](https://github.com/MarkdenToom/StrangeStuff/issues).
+This is a solo project. If you find any issues, please create an issue in the [Issues tab](https://github.com/MarkdenToom/StrangeStuff/issues).
 
 ## Authors
 
